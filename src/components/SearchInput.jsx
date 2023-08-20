@@ -13,6 +13,7 @@ const SearchInput = () => {
 
     const searchQueryHandler=(event)=>{
         if (event.key==="Enter" && searchQuery.length>0){
+            console.log("on key up")
             navigate(`/${searchQuery}/${1}`);
         }    
     }
