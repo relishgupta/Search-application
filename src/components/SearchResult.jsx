@@ -16,7 +16,7 @@ const SearchResult = () => {
 
     useEffect(()=>{
         fetchSearchResults();
-    },[query,startIndex,imageSearch])
+    })
 
     const fetchSearchResults=()=>{
         let payload={q:query,start:startIndex}
@@ -24,6 +24,7 @@ const SearchResult = () => {
             payload.SearchType='image'
         }
         fetchDataFromApi(payload).then((res)=>{
+            console.log(res)
             setResult(res);
         })
     }

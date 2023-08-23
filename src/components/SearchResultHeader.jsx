@@ -13,7 +13,7 @@ const SearchResultHeader = () => {
 
     useEffect(()=>{
         return ()=>setImageSearch(false);
-    },[])
+    })
 
     const clickHandler=(menuItem)=>{
         let isTypeImage=menuItem.name==="Images";
