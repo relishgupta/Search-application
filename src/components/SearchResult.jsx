@@ -14,11 +14,9 @@ const SearchResult = () => {
     const {query,startIndex}=useParams(); 
     const {imageSearch}=useContext(Context);
 
-    useEffect(()=>{
-        fetchSearchResults();
-    })
+    
 
-    const fetchSearchResults=()=>{
+    useEffect(()=>{
         let payload={q:query,start:startIndex}
         if(imageSearch){
             payload.SearchType='image'
@@ -27,7 +25,7 @@ const SearchResult = () => {
             console.log(res)
             setResult(res);
         })
-    }
+    },[query,startIndex,imageSearch])
 
     if(!result) return;
     const {items,queries,searchInformation}=result;
